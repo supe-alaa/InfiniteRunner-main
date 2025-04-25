@@ -1,0 +1,195 @@
+[gd_scene load_steps=8 format=3 uid="uid://df66lbg7x122w"]
+
+[ext_resource type="Script" path="res://authentication.gd" id="1_lvocl"]
+[ext_resource type="Texture2D" uid="uid://cjrs7pvoojuwq" path="res://art/Ad.png" id="2_hssha"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1j3aj"]
+bg_color = Color(0.258824, 0.478431, 0.764706, 1)
+border_color = Color(0.666667, 0.666667, 0.666667, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(2.395, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mv1nd"]
+bg_color = Color(0.258824, 0.478431, 0.764706, 1)
+border_color = Color(0.666667, 0.666667, 0.666667, 1)
+border_blend = true
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+expand_margin_left = 45.0
+shadow_color = Color(0, 0, 0, 1)
+shadow_size = 1
+shadow_offset = Vector2(2.395, 10)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q21e4"]
+bg_color = Color(0.12549, 0.294118, 0.266667, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 3
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_04e3w"]
+bg_color = Color(0.192157, 0.415686, 0.380392, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+shadow_size = 3
+shadow_offset = Vector2(5, 6)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_p231s"]
+
+[node name="Authentication" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.665, 0.665)
+script = ExtResource("1_lvocl")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 382.0
+offset_bottom = 667.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.298039, 0.415686, 0.509804, 1)
+
+[node name="MainText" type="Label" parent="."]
+layout_mode = 0
+offset_left = 99.0
+offset_top = 333.0
+offset_right = 1001.0
+offset_bottom = 439.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_1j3aj")
+text = "Please Sign Up"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MainText2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 153.0
+offset_top = 521.0
+offset_right = 990.0
+offset_bottom = 1407.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 8
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = SubResource("StyleBoxFlat_mv1nd")
+text = "Email:
+
+Password:
+
+
+Your account will be 
+saved on your Device
+"
+
+[node name="StateLabel" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 123.0
+offset_top = 956.0
+offset_right = 979.0
+offset_bottom = 1064.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sign up" type="Button" parent="."]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 1491.0
+offset_right = 927.0
+offset_bottom = 1612.0
+theme_override_colors/font_color = Color(0.878431, 0.894118, 0.890196, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/icon_max_width = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_q21e4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_04e3w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p231s")
+text = "Sign up"
+icon = ExtResource("2_hssha")
+
+[node name="LogIn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 1663.0
+offset_right = 923.0
+offset_bottom = 1784.0
+theme_override_colors/font_color = Color(0.878431, 0.894118, 0.890196, 1)
+theme_override_constants/outline_size = 4
+theme_override_constants/icon_max_width = 1
+theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_q21e4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_04e3w")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_p231s")
+text = "Log In"
+icon = ExtResource("2_hssha")
+
+[node name="EmailLineEdit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 214.0
+offset_top = 641.0
+offset_right = 916.0
+offset_bottom = 728.0
+theme_override_colors/font_placeholder_color = Color(0.713726, 0.713726, 0.713726, 1)
+theme_override_colors/font_outline_color = Color(0.713726, 0.713726, 0.713726, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Account Username"
+alignment = 1
+
+[node name="PasswordLineEdit" type="LineEdit" parent="."]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 219.0
+offset_top = 861.0
+offset_right = 921.0
+offset_bottom = 948.0
+theme_override_colors/font_placeholder_color = Color(0.713726, 0.713726, 0.713726, 1)
+theme_override_colors/font_outline_color = Color(0.713726, 0.713726, 0.713726, 1)
+theme_override_constants/outline_size = 3
+theme_override_font_sizes/font_size = 32
+placeholder_text = "Account Password"
+alignment = 1
+secret = true
+caret_blink_interval = 4.78
+
+[node name="HTTPRequest" type="HTTPRequest" parent="."]
+
+[connection signal="pressed" from="Sign up" to="." method="_on_signup_button_pressed"]
+[connection signal="pressed" from="LogIn" to="." method="_on_login_button_pressed"]

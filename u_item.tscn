@@ -1,0 +1,28 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxaduqw1rtgxt"]
+
+[ext_resource type="Script" path="res://u_item.gd" id="1_b03q3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28o2w"]
+bg_color = Color(0.721569, 0.435294, 0.14902, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[node name="UItem" type="Label"]
+theme_override_font_sizes/font_size = 57
+theme_override_styles/normal = SubResource("StyleBoxFlat_28o2w")
+text = " 🛡️    10s      "
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("1_b03q3")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="Timer2" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

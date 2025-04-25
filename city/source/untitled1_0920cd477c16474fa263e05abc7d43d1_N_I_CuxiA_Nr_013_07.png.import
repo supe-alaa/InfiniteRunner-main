@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+uid="uid://6gwqqhnu778a"
+path.s3tc="res://.godot/imported/untitled1_0920cd477c16474fa263e05abc7d43d1_N_I_CuxiA_Nr_013_07.png-4144a67cbacdc71f9d457b04184895b2.s3tc.ctex"
+path.etc2="res://.godot/imported/untitled1_0920cd477c16474fa263e05abc7d43d1_N_I_CuxiA_Nr_013_07.png-4144a67cbacdc71f9d457b04184895b2.etc2.ctex"
+metadata={
+"imported_formats": ["s3tc_bptc", "etc2_astc"],
+"vram_texture": true
+}
+generator_parameters={}
+
+[deps]
+
+source_file="res://city/source/untitled1_0920cd477c16474fa263e05abc7d43d1_N_I_CuxiA_Nr_013_07.png"
+dest_files=["res://.godot/imported/untitled1_0920cd477c16474fa263e05abc7d43d1_N_I_CuxiA_Nr_013_07.png-4144a67cbacdc71f9d457b04184895b2.s3tc.ctex", "res://.godot/imported/untitled1_0920cd477c16474fa263e05abc7d43d1_N_I_CuxiA_Nr_013_07.png-4144a67cbacdc71f9d457b04184895b2.etc2.ctex"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/hdr_compression=1
+compress/normal_map=1
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=1
+roughness/src_normal="res://city/source/untitled1_0920cd477c16474fa263e05abc7d43d1_N_I_CuxiA_Nr_013_07.png"
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0

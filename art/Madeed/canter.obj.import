@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cp74n1kp87p04"
+path="res://.godot/imported/canter.obj-61f13581ca91399bed2b47e00a608acc.mesh"
+
+[deps]
+
+files=["res://.godot/imported/canter.obj-61f13581ca91399bed2b47e00a608acc.mesh"]
+
+source_file="res://art/Madeed/canter.obj"
+dest_files=["res://.godot/imported/canter.obj-61f13581ca91399bed2b47e00a608acc.mesh", "res://.godot/imported/canter.obj-61f13581ca91399bed2b47e00a608acc.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

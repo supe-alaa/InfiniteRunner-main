@@ -1,0 +1,57 @@
+[gd_scene load_steps=11 format=3 uid="uid://d2kwg84xy1uly"]
+
+[ext_resource type="Shader" path="res://test_game.gdshader" id="1_bpbup"]
+[ext_resource type="PackedScene" uid="uid://dirdj4x5qok33" path="res://art/Player Anim/Fast Run.fbx" id="2_gc453"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_2icjl"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_c2mra"]
+sky_material = SubResource("ProceduralSkyMaterial_2icjl")
+
+[sub_resource type="Environment" id="Environment_6158n"]
+background_mode = 2
+sky = SubResource("Sky_c2mra")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eif5n"]
+render_priority = 0
+shader = ExtResource("1_bpbup")
+
+[sub_resource type="TorusMesh" id="TorusMesh_qm54r"]
+material = SubResource("ShaderMaterial_eif5n")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_b3jgy"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cxccd"]
+render_priority = 0
+shader = ExtResource("1_bpbup")
+
+[sub_resource type="BoxMesh" id="BoxMesh_hkn6j"]
+material = SubResource("ShaderMaterial_cxccd")
+custom_aabb = AABB(-0.74, 0, 0, 0, 0, 0)
+
+[node name="Test_Game" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.785399, -0.613091, -0.0852497, -0.536154, -0.742638, 0.401283, -0.309333, -0.269461, -0.911978, 0, 1.03515, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_6158n")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.59696)
+mesh = SubResource("TorusMesh_qm54r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(4.92, 0, 0, 0, 4.92, 0, 0, 0, 4.92, -1.708, 129, -6.858)
+material_override = SubResource("StandardMaterial3D_b3jgy")
+mesh = SubResource("BoxMesh_hkn6j")
+
+[node name="Fast Run" parent="." instance=ExtResource("2_gc453")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.071, -1.805, -3.302)

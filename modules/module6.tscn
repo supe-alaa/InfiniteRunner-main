@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://8skv2eu2o5qd"]
+
+[ext_resource type="Script" path="res://modules/module.gd" id="1_8w4e1"]
+[ext_resource type="PackedScene" uid="uid://dh4inma70t4e8" path="res://art/Madeed/car/american_muscle_69_-_low_poly_model.glb" id="3_pgr7c"]
+[ext_resource type="PackedScene" uid="uid://gdttmjlvw6cc" path="res://art/Madeed/Truck 3d/90_light_commercial_truck_-_low_poly_model.glb" id="18_p4un6"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_nwqty"]
+size = Vector3(5.05636, 3.41904, 2.98256)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ubjbp"]
+size = Vector3(3.93598, 3.34644, 2.29164)
+
+[node name="Node3D" type="Node3D" groups=["module"]]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_8w4e1")
+
+[node name="90_light_commercial_truck_-_low_poly_model2" parent="." instance=ExtResource("18_p4un6")]
+transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, -0.656864, 1.34074, 1.09156)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["module"]]
+transform = Transform3D(0.615, 0, 0, 0, 0.375, 0, 0, 0, 0.375, -0.785453, 0, 0.0670608)
+collision_layer = 513
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7766, 2.69576)
+shape = SubResource("BoxShape3D_nwqty")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.659882, 0, -3.07973)
+shape = SubResource("BoxShape3D_ubjbp")
+
+[node name="american_muscle_69_-_low_poly_model" parent="." instance=ExtResource("3_pgr7c")]
+transform = Transform3D(0.00872619, 0, 0.499924, 0, 0.5, 0, -0.499924, 0, 0.00872619, -1.08968, -0.0451394, -1.06192)

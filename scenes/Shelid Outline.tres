@@ -1,0 +1,11 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://b55arp25773u"]
+
+[ext_resource type="Texture2D" uid="uid://bsvpfihcf3isd" path="res://art/Madeed/Truck 3d/90_light_commercial_truck_-_low_poly_model_0.png" id="1_3gkn7"]
+
+[resource]
+cull_mode = 1
+shading_mode = 0
+albedo_color = Color(0.815686, 0.847059, 0.854902, 1)
+albedo_texture = ExtResource("1_3gkn7")
+grow = true
+grow_amount = 0.08

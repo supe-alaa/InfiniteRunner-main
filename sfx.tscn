@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm4n8mnysufrs"]
+
+[ext_resource type="AudioStream" uid="uid://on2at1hdbjct" path="res://art/Pickup_Coin.wav" id="1_jw88l"]
+[ext_resource type="AudioStream" uid="uid://ck8qvkna7gl4e" path="res://art/Powerup.wav" id="2_q85dt"]
+[ext_resource type="AudioStream" uid="uid://xie2bxjd6k2x" path="res://art/power-punch-192118.mp3" id="3_68c3x"]
+
+[node name="SFX" type="Node"]
+
+[node name="coin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_jw88l")
+
+[node name="powerup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_q85dt")
+
+[node name="harddamage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_68c3x")
+pitch_scale = 0.72

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://0grpqpsxtk6m"]
+
+[ext_resource type="Script" path="res://an_item.gd" id="1_365vn"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_sx8jh"]
+
+[node name="AnItem" type="Node3D"]
+script = ExtResource("1_365vn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.253086, 0)
+mesh = SubResource("BoxMesh_sx8jh")

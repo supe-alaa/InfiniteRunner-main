@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://urka8ho68bnr"]
+
+[ext_resource type="Script" path="res://modules/module.gd" id="1_5avdq"]
+[ext_resource type="PackedScene" uid="uid://cjgfwsv3u43dh" path="res://scenes/coin.tscn" id="2_1dxo4"]
+
+[node name="Node3D" type="Node3D" groups=["module"]]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+script = ExtResource("1_5avdq")
+
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="Coin" parent="Node3D" instance=ExtResource("2_1dxo4")]
+
+[node name="Node3D4" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0889284, 0.153952, 0.00838626)
+
+[node name="Coin" parent="Node3D4" instance=ExtResource("2_1dxo4")]
+
+[node name="Node3D5" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0829179, 0.153952, 0.00838625)
+
+[node name="Coin" parent="Node3D5" instance=ExtResource("2_1dxo4")]
