@@ -171,7 +171,7 @@ _data = {
 size = Vector3(46.7759, 3.62734, 28.4221)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l3gmb"]
-size = Vector3(5.74608, 1, 7.60095)
+size = Vector3(11.21, 1, 10.598)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvny8"]
 bg_color = Color(1, 1, 0, 1)

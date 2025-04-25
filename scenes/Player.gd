@@ -33,7 +33,7 @@ func _ready():
 	$"Char/Char/Fast Run/AnimationPlayer".play("mixamo_com")
 	
 
-
+var cur_pos = 1
 func _physics_process(delta):
 
 	
@@ -49,12 +49,14 @@ func _physics_process(delta):
 		
 		
 		if Input.is_action_just_pressed("right") and position.z != 1:
-			position.z += 1
+			cur_pos += 1 
+
 			$MoveAnimationPlayer.stop()
 			$MoveAnimationPlayer.play("right")
 			$MoveSfx.play()
 		elif Input.is_action_just_pressed("left") and position.z != -1:
-			position.z -= 1
+
+			cur_pos -= 1 
 			$MoveAnimationPlayer.stop()
 			$MoveAnimationPlayer.play("left")
 			$MoveSfx.play()
@@ -71,7 +73,7 @@ func _physics_process(delta):
 			$"Char/Char/Fast Run/AnimationPlayer".play("mixamo_com")
 		velocity.y += -gravity * delta
 		move_and_slide()
-			
+		position.z = lerpf(position.z,positions[cur_pos],delta*30)
 
 @warning_ignore("shadowed_global_identifier", "unused_parameter")
 func death(str,rot):

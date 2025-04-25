@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cjgfwsv3u43dh"]
+[gd_scene load_steps=15 format=3 uid="uid://cjgfwsv3u43dh"]
 
 [ext_resource type="Script" path="res://scenes/coin.gd" id="1_kcss7"]
 [ext_resource type="Texture2D" uid="uid://b7h5tcn62xn4y" path="res://art/Madeed/Coin/subway_surfers_coin_0.png" id="2_bqfdb"]
@@ -106,6 +106,29 @@ _data = {
 [sub_resource type="SphereShape3D" id="SphereShape3D_y76b7"]
 radius = 0.0841567
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1ng35"]
+albedo_color = Color(0.85098, 0.67451, 0.345098, 1)
+
+[sub_resource type="Curve" id="Curve_fqf0k"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.994624, 0.347368), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_wk2ry"]
+curve = SubResource("Curve_fqf0k")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2yivi"]
+direction = Vector3(0, 1, 0)
+spread = 180.0
+gravity = Vector3(0, -1.97, 0)
+initial_velocity_min = 0.5
+initial_velocity_max = 1.0
+scale_min = 0.08
+scale_max = 0.08
+scale_curve = SubResource("CurveTexture_wk2ry")
+color = Color(1, 1, 0, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_qfak1"]
+
 [node name="Coin" type="Area3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.15, 0)
 script = ExtResource("1_kcss7")
@@ -130,6 +153,17 @@ libraries = {
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1542, 0)
 shape = SubResource("SphereShape3D_y76b7")
+
+[node name="CPUParticles3D" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134917, 0)
+material_override = SubResource("StandardMaterial3D_1ng35")
+emitting = false
+lifetime = 0.3
+one_shot = true
+speed_scale = 2.0
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_2yivi")
+draw_pass_1 = SubResource("BoxMesh_qfak1")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
