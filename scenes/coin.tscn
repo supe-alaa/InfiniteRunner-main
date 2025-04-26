@@ -122,12 +122,12 @@ spread = 180.0
 gravity = Vector3(0, -1.97, 0)
 initial_velocity_min = 0.5
 initial_velocity_max = 1.0
-scale_min = 0.08
-scale_max = 0.08
+scale_min = 0.1
+scale_max = 0.1
 scale_curve = SubResource("CurveTexture_wk2ry")
 color = Color(1, 1, 0, 1)
 
-[sub_resource type="BoxMesh" id="BoxMesh_qfak1"]
+[sub_resource type="BoxMesh" id="BoxMesh_towih"]
 
 [node name="Coin" type="Area3D"]
 transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.15, 0)
@@ -155,15 +155,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.1542, 0)
 shape = SubResource("SphereShape3D_y76b7")
 
 [node name="CPUParticles3D" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.134917, 0)
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.134917, 0)
 material_override = SubResource("StandardMaterial3D_1ng35")
 emitting = false
+amount = 16
 lifetime = 0.3
 one_shot = true
-speed_scale = 2.0
+speed_scale = 1.5
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_2yivi")
-draw_pass_1 = SubResource("BoxMesh_qfak1")
+draw_pass_1 = SubResource("BoxMesh_towih")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

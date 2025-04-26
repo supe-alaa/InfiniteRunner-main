@@ -106,7 +106,7 @@ func live():
 	player_state = "Normal"
 	Global.on_game = true
 	position.y = 0.141
-	position.z = 0
+
 	$AnimationPlayer.play("liveing")
 	
 	await $AnimationPlayer.animation_finished
@@ -122,12 +122,12 @@ func _on_area_body_entered(body):
 		for a in items: 
 			if a == "shield":
 				Sfx.get_node("harddamage").play()
+				$Camera/Camera.apply_shake()
 				$AreaBoomer.monitoring = true
 				await get_tree().create_timer(0.1).timeout
 				$AreaBoomer.monitoring = false
 				print("AAAAA")
 				print(items)
-				position.z = 0
 				
 				itemfinshed("shield")
 				

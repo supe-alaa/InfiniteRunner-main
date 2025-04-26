@@ -13,7 +13,7 @@ func _on_body_entered(body):
 		Global.Coins += 1
 		Sfx.get_node("coin").play()
 		$subway_surfers_coin.hide()
-		$CollisionShape3D.disabled = true
+		$CollisionShape3D.call_deferred("set_disabled",true)
 		$CPUParticles3D.restart()
 		await get_tree().create_timer(0.5).timeout
 		queue_free()
@@ -25,7 +25,7 @@ func _on_area_entered(area):
 		Global.Coins += 1
 		Sfx.get_node("coin").play()
 		$subway_surfers_coin.hide()
-		$CollisionShape3D.disabled = true
+		$CollisionShape3D.call_deferred("set_disabled",true)
 		$CPUParticles3D.restart()
 		queue_free()
 	pass # Replace with function body.

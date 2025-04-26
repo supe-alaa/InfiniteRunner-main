@@ -11,7 +11,7 @@ var amnt = 5
 
 var rng = RandomNumberGenerator.new()
 
-var offset = 49.90
+var offset = 49.80
 
 
 var obstacles_speed = 5

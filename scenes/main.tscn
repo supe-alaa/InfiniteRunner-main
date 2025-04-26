@@ -1,9 +1,10 @@
-[gd_scene load_steps=40 format=3 uid="uid://cgd0qkgnstuy0"]
+[gd_scene load_steps=41 format=3 uid="uid://cgd0qkgnstuy0"]
 
 [ext_resource type="Script" path="res://scenes/Level.gd" id="1_7eprk"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_giui5"]
 [ext_resource type="PackedScene" uid="uid://p71xwawyruxj" path="res://modules/module1.tscn" id="3_bagks"]
 [ext_resource type="PackedScene" uid="uid://3sve2nrss2io" path="res://modules/module2.tscn" id="4_2u7gq"]
+[ext_resource type="PackedScene" uid="uid://bxuqlg64ur4w4" path="res://modules/module3.tscn" id="5_y4kpi"]
 [ext_resource type="Script" path="res://scenes/Player.gd" id="7_obtw7"]
 [ext_resource type="Script" path="res://scenes/Camera.gd" id="9_q2vtt"]
 [ext_resource type="AudioStream" uid="uid://thi3jg21fujs" path="res://art/whoosh-transitions-sfx-03-118230.mp3" id="21_hbci6"]
@@ -340,7 +341,7 @@ mesh = SubResource("BoxMesh_smuft")
 
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("1_7eprk")
-pices = Array[PackedScene]([ExtResource("3_bagks"), ExtResource("4_2u7gq")])
+pices = Array[PackedScene]([ExtResource("3_bagks"), ExtResource("4_2u7gq"), ExtResource("5_y4kpi")])
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_jgbfd")
