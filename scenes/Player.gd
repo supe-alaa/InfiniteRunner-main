@@ -46,7 +46,7 @@ func _physics_process(delta):
 		$"Char/Char/Fast Run".hide()
 	if player_state == "Normal":
 		
-		
+		swipe()
 		
 		if Input.is_action_just_pressed("right") and position.z != 1:
 			cur_pos += 1 
@@ -61,7 +61,7 @@ func _physics_process(delta):
 			$MoveAnimationPlayer.play("left")
 			$MoveSfx.play()
 
-		if Input.is_action_just_pressed("jump") and position.y <= 0.141:
+		if Input.is_action_just_pressed("jump") and is_on_floor():
 			velocity.y += JUMP_VEL
 			$Char/Char/Jump.show()
 			$"Char/Char/Fast Run".hide()
@@ -73,7 +73,66 @@ func _physics_process(delta):
 			$"Char/Char/Fast Run/AnimationPlayer".play("mixamo_com")
 		velocity.y += -gravity * delta
 		move_and_slide()
+	
 		position.z = lerpf(position.z,positions[cur_pos],delta*30)
+
+
+var swipe_start := Vector2.ZERO
+var swipe_threshold := 50  # الحد الأدنى للسحب لتغيير المسار
+
+func swipe():
+	if Input.is_action_just_pressed("press"):
+		if !swiping:
+			swiping = true
+			startSwipe = get_viewport().get_mouse_position()
+			
+	if Input.is_action_pressed("press"):
+		if swiping:
+			curSwipe = get_viewport().get_mouse_position()
+			if startSwipe.distance_to(curSwipe) >= swipeLength:
+				
+				if abs(startSwipe.y-curSwipe.y) < threshold:
+					if startSwipe.x-curSwipe.x < 0:
+						if position.z != 1:
+							cur_pos += 1 
+							$MoveAnimationPlayer.stop()
+							$MoveAnimationPlayer.play("right")
+							$MoveSfx.play()
+					else:
+						if position.z != -1:
+							cur_pos -= 1 
+							$MoveAnimationPlayer.stop()
+							$MoveAnimationPlayer.play("left")
+							$MoveSfx.play()
+				if abs(startSwipe.x-curSwipe.x) < threshold:
+					if startSwipe.y-curSwipe.y > 0 and is_on_floor():
+						velocity.y = JUMP_VEL
+						
+						$Char/Char/Jump.show()
+						$"Char/Char/Fast Run".hide()
+						$JumpSfx.play()
+						$Char/Char/Jump/AnimationPlayer.play("mixamo_com")
+						await $Char/Char/Jump/AnimationPlayer.animation_finished
+						$Char/Char/Jump.hide()
+						$"Char/Char/Fast Run".show()
+						$"Char/Char/Fast Run/AnimationPlayer".play("mixamo_com")
+						
+				swiping = false
+	else:
+		swiping = false
+
+
+
+
+
+@export var speed: float = 300.0
+
+var moving_left := false
+var moving_right := false
+
+
+
+
 
 @warning_ignore("shadowed_global_identifier", "unused_parameter")
 func death(str,rot):

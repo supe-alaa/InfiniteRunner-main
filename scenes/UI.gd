@@ -31,6 +31,7 @@ func _on_exit_pressed():
 	if CurrentScore > Global.HighScore:
 		Global.HighScore = CurrentScore
 		Global.submit_score(Global.email,Global.HighScore)
+	Global.save()
 	ScenesTeleporter.teleport("res://scenes/main_menu.tscn")
 	
 	pass # Replace with function body.

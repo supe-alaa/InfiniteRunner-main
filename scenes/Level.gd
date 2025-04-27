@@ -14,7 +14,7 @@ var rng = RandomNumberGenerator.new()
 var offset = 49.80
 
 
-var obstacles_speed = 5
+var obstacles_speed = 4.5
 
 
 func _ready():
@@ -24,7 +24,7 @@ func _ready():
 
 @warning_ignore("unused_parameter")
 func _physics_process(delta):
-	obstacles_speed += 0.0001
+	obstacles_speed += 0.00015
 
 	pass
 

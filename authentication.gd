@@ -19,6 +19,7 @@ func _on_login_button_pressed():
 	var password = %PasswordLineEdit.text
 	Global.email = %EmailLineEdit.text
 	Firebase.Auth.login_with_email_and_password(email, password)
+	Global.recover()
 	%StateLabel.text = "Logging in"
 func _on_signup_button_pressed():
 	var email = %EmailLineEdit.text
@@ -32,6 +33,7 @@ func on_login_succeeded (auth):
 	%StateLabel.text = "Login success!"
 	Firebase.Auth.save_auth(auth)
 	Firebase.Auth.load_auth()
+	
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func on_signup_succeeded (auth):
@@ -40,6 +42,7 @@ func on_signup_succeeded (auth):
 	Firebase.Auth.save_auth(auth)
 	Firebase.Auth.load_auth()
 	Global.email = %EmailLineEdit.text
+	Global.save()
 	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func on_login_failed (error_code, message):

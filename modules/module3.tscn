@@ -13,6 +13,7 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 
 script = ExtResource("1_jy2mx")
 
 [node name="untitled1" parent="." instance=ExtResource("2_tfude")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, -5)
 
 [node name="90_light_commercial_truck_-_low_poly_model" parent="." instance=ExtResource("3_0pill")]
 transform = Transform3D(0.013, 0, 0, 0, 0.013, 0, 0, 0, 0.013, 6.42168, 1.243, -1.1038)

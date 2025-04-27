@@ -26,6 +26,7 @@ func _on_pressed():
 		disabled = false
 		print("Bued")
 		Global.Coins -= price
+		Global.save()
 	elif Global.skins[id] == true:
 		Global.current_skin = id + 1
 	else:
