@@ -7,7 +7,7 @@ extends Node3D
 @export var pices:Array[PackedScene] 
 
 
-var amnt = 5
+var amnt = 2
 
 var rng = RandomNumberGenerator.new()
 

@@ -141,6 +141,7 @@ transform = Transform3D(1, 0, 0, 0, 2.22045e-16, 1, 0, -1, 2.22045e-16, 0, 0, 0)
 [node name="Coin_obj_cleaner_materialmerger_gles" type="Node3D" parent="subway_surfers_coin/Sketchfab_model"]
 
 [node name="Object_2" type="MeshInstance3D" parent="subway_surfers_coin/Sketchfab_model/Coin_obj_cleaner_materialmerger_gles"]
+lod_bias = 0.5
 mesh = SubResource("ArrayMesh_fb1iv")
 skeleton = NodePath("")
 

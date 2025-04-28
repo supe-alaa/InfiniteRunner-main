@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://cgd0qkgnstuy0"]
+[gd_scene load_steps=42 format=3 uid="uid://cgd0qkgnstuy0"]
 
 [ext_resource type="Script" path="res://scenes/Level.gd" id="1_7eprk"]
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_giui5"]
@@ -324,6 +324,9 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_size = 1
 shadow_offset = Vector2(2.395, 10)
 
+[sub_resource type="BoxOccluder3D" id="BoxOccluder3D_cgepx"]
+size = Vector3(0.441309, 2.8001, 4.44301)
+
 [node name="main" type="Node3D"]
 script = ExtResource("1_giui5")
 
@@ -350,7 +353,6 @@ environment = SubResource("Environment_jgbfd")
 transform = Transform3D(0.702692, -0.656934, 0.273243, -0.0493662, 0.338099, 0.939815, -0.709779, -0.673889, 0.205149, 0, 0, 0)
 light_energy = 2.0
 light_angular_distance = 3.13
-shadow_enabled = true
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0.141172, 0)
@@ -581,6 +583,10 @@ transform = Transform3D(1, 0, 0, 0, -0.0164577, 0.999865, 0, -0.999865, -0.01645
 stream = ExtResource("23_yvx36")
 volume_db = -10.0
 autoplay = true
+
+[node name="OccluderInstance3D" type="OccluderInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.9573, 0, 0)
+occluder = SubResource("BoxOccluder3D_cgepx")
 
 [connection signal="body_entered" from="Player/Area" to="Player" method="_on_area_body_entered"]
 [connection signal="body_entered" from="Player/AreaBoomer" to="Player" method="_on_area_boomer_body_entered"]

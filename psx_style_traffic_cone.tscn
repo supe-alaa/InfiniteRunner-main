@@ -137,18 +137,24 @@ transform = Transform3D(0.01, 0, 0, 0, 0, -0.01, 0, 0.01, 0, 0, 0, 0)
 transform = Transform3D(0.0150879, 0, 0.999886, 0, 1, 0, -0.999886, 0, 0.0150879, -17.3263, 0, -0.787558)
 
 [node name="Cylinder_Material_0" type="MeshInstance3D" parent="Sketchfab_model/243b6b223ad04fb59c99a7857a08d15c_fbx/RootNode/Cylinder"]
+transform = Transform3D(1, -1.32349e-23, -9.31323e-10, 1.32349e-23, 1, 0, 9.31323e-10, 0, 1, 0, 0, 0)
+lod_bias = 0.1
 mesh = SubResource("ArrayMesh_k05l0")
 
 [node name="Cylinder_001" type="Node3D" parent="Sketchfab_model/243b6b223ad04fb59c99a7857a08d15c_fbx/RootNode"]
 transform = Transform3D(0.888336, 0, -0.459194, 0, 1, 0, 0.459194, 0, 0.888336, 137.823, 0, 82.6937)
 
 [node name="Cylinder_001_Material_001_0" type="MeshInstance3D" parent="Sketchfab_model/243b6b223ad04fb59c99a7857a08d15c_fbx/RootNode/Cylinder_001"]
+transform = Transform3D(1, -1.32349e-23, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, 0, 0, 0)
+lod_bias = 0.1
 mesh = SubResource("ArrayMesh_oou14")
 
 [node name="Cylinder_002" type="Node3D" parent="Sketchfab_model/243b6b223ad04fb59c99a7857a08d15c_fbx/RootNode"]
 transform = Transform3D(0.452989, 0, -0.891516, 0, 1, 0, 0.891516, 0, 0.452989, -7.87558, 0, 164.6)
 
 [node name="Cylinder_002_Material_002_0" type="MeshInstance3D" parent="Sketchfab_model/243b6b223ad04fb59c99a7857a08d15c_fbx/RootNode/Cylinder_002"]
+transform = Transform3D(1, -1.32349e-23, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0, 0)
+lod_bias = 0.1
 mesh = SubResource("ArrayMesh_012y5")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="." groups=["module"]]
