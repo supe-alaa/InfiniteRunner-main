@@ -7,6 +7,9 @@ var CurrentScore = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Admob.load_banner()
+	Admob.load_rewarded_interstitial()
+	
 	pass # Replace with function body.
 
 
@@ -20,9 +23,8 @@ func _process(_delta):
 
 
 func _on_ad_pressed():
-	$"../Player".live()
-	$Die.hide()
-	$ScoreTimer.start()
+	Admob.show_rewarded_interstitial()
+	
 	pass # Replace with function body.
 
 
@@ -44,4 +46,11 @@ func Die():
 
 func _on_score_timer_timeout():
 	CurrentScore += 1
+	pass # Replace with function body.
+
+
+func _on_ad_mob_rewarded_interstitial_opened():
+	$"../Player".live()
+	$Die.hide()
+	$ScoreTimer.start()
 	pass # Replace with function body.

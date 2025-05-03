@@ -186,8 +186,8 @@ theme_override_constants/outline_size = 3
 theme_override_font_sizes/font_size = 32
 placeholder_text = "Account Password"
 alignment = 1
-secret = true
 caret_blink_interval = 4.78
+secret = true
 
 [node name="HTTPRequest" type="HTTPRequest" parent="."]
 
